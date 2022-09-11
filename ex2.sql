@@ -41,3 +41,10 @@ and m.student_id = e.student_id and d.name = 'BIF';
 select s.*
 from student s, enrolled e
 where s.id != e.student_id;
+
+
+--pt6
+--Find the number of CS students enrolled in CSC275
+select count(m.student_id)
+from majors_in m, enrolled e, course c
+where m.student_id = e.student_id and c.crn = e.course_crn and c.name = 'CSC275' and m.dept_id = 'CS';
