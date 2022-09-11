@@ -26,3 +26,11 @@ where start_time = (
 
 --pt 3 is cancelled
 --Find the number of majors in each department
+
+
+--pt 4
+--Find all courses taken by BIF majors
+select c.*
+from department d, course c, majors_in m, enrolled e 
+where d.id = m.dept_id and c.crn = e.course_crn 
+and m.student_id = e.student_id and d.name = 'BIF';
