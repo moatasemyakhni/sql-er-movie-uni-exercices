@@ -55,3 +55,11 @@ where m.student_id = e.student_id and c.crn = e.course_crn and c.name = 'CSC275'
 select count(distinct student_id)
 from majors_in m, enrolled e
 where m.student_id = e.student_id and m.dept_id = 'CS';
+
+
+--pt8
+--Find the number of majors that each student has declared
+select m.student_id, count(d.name)
+from majors_in m, department d
+group by m.student_id
+where d.id = m.dept_id;
