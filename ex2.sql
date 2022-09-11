@@ -12,3 +12,13 @@
 select *
 from room
 where capacity >= 100;
+
+
+--pt2
+--Find the course or courses with the earliest start time
+select *
+from course
+where start_time = (
+    select min(start_time)
+    from course
+);
