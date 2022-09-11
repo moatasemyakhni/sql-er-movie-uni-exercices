@@ -34,3 +34,10 @@ select c.*
 from department d, course c, majors_in m, enrolled e 
 where d.id = m.dept_id and c.crn = e.course_crn 
 and m.student_id = e.student_id and d.name = 'BIF';
+
+
+--pt5
+--Create a list of all students who are not enrolled in a course
+select s.*
+from student s, enrolled e
+where s.id != e.student_id;
