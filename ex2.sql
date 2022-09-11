@@ -63,3 +63,11 @@ select m.student_id, count(d.name)
 from majors_in m, department d
 group by m.student_id
 where d.id = m.dept_id;
+
+
+--pt9
+-- For each department with more than one majoring student, print the department’s name and the number of majoring students
+select dept_id, count(student_id)
+from majors_in
+group by dept_id
+having count(student_id) > 1;
