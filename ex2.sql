@@ -48,3 +48,10 @@ where s.id != e.student_id;
 select count(m.student_id)
 from majors_in m, enrolled e, course c
 where m.student_id = e.student_id and c.crn = e.course_crn and c.name = 'CSC275' and m.dept_id = 'CS';
+
+
+--pt7
+--Find the number of CS students enrolled in any course
+select count(distinct student_id)
+from majors_in m, enrolled e
+where m.student_id = e.student_id and m.dept_id = 'CS';
