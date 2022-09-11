@@ -22,3 +22,7 @@ where start_time = (
     select min(start_time)
     from course
 );
+
+
+--pt 3 is cancelled
+--Find the number of majors in each department
